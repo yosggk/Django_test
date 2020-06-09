@@ -3,6 +3,7 @@ FROM python:3.8.3-slim
 # 環境変数を設定する
 ENV PYTHONUNBUFFERED 1
 
+
 # コンテナ内にcodeディレクトリを作り、そこをワークディレクトリとする
 RUN mkdir /code
 WORKDIR /code
