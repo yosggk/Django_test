@@ -1,11 +1,16 @@
 FROM python:3.8.3-slim
 
-# Set the working directory to /app
-WORKDIR /app
+# 環境変数を設定する
+ENV PYTHONUNBUFFERED 1
 
-#必要なファイルのdockerへのコピー
-COPY requirements.txt ./
+# コンテナ内にcodeディレクトリを作り、そこをワークディレクトリとする
+RUN mkdir /code
+WORKDIR /code
 
-# 必要なモジュールをインストール
-RUN pip install --upgrade pip \
-&& pip install -r requirements.txt
+# ホストPCにあるrequirements.txtをコンテナ内のcodeディレクトリにコピーする
+# コピーしたrequirements.txtを使ってパッケージをインストールする
+ADD requirements.txt /code/
+RUN pip install -r requirements.txt
+
+# ホストPCの各種ファイルをcodeディレクトリにコピーする
+ADD . /code/
