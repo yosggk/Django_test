@@ -12,3 +12,6 @@ python manage.py makemigrations []
 
 //マイグレーションを実行する
 python manage.py migrate
+
+//userの作成
+ python manage.py createsuperuser

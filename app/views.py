@@ -8,4 +8,4 @@ def index(request):
         'message': 'Welcome my BBS',
         'articles': articles,
     }
-    return render(request, 'bbs/index.html', context)
+    return render(request, 'app/index.html', context)

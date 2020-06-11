@@ -2,7 +2,10 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import pymysql
 
+#mysqlを利用するように設定
+pymysql.install_as_MySQLdb()
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blogsite.settings')
