@@ -1,3 +1,4 @@
 from django.contrib import admin
-
-# Register your models here.
+from .models import Article
+#Articleに関するユーザー管理
+admin.site.register(Article)
