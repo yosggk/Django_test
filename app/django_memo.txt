@@ -1,3 +1,9 @@
+#[dir name] のdjango用のディレクトリの作成
+django-admin startproject [dir name]
+
+#djangoのweb sererにアクセス
+python [xxx.py] runserver
+
 //マイグレーションとは
 マイグレーションとは、データベースの中身を一括して移行したり変更する作業です。
 Djangoのマイグレーション機能を利用すると、データベースの変更を一度に行うことができます。
