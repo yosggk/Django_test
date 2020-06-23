@@ -27,3 +27,14 @@ def create(request):
         'articles': articles,
     }
     return render(request, 'app/index.html', context)
+
+def delete(request, id):
+    article = get_object_or_404(Article, pk=id)
+    article.delete()
+    
+    article = Article.objects.all()
+    context = {
+        'message': 'Delete Article ' + str(id),
+        'articles': article,
+    }
+    return render(request, 'app/index.html', context)
